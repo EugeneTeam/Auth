@@ -52,12 +52,22 @@ public class Controller {
                     Stage c = (Stage) close.getScene().getWindow();
                     c.close();
 
+                    //open new form
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/mainForm.fxml"));
 
+                    //create controller
+                    MainController mainController = new MainController(response);
+                    fxmlLoader.setController(mainController);
+                    Parent root1 = fxmlLoader.load();
+                    Stage stage = new Stage();
+                    stage.setTitle("Git");
+                    Scene s = new Scene(root1);
+                    stage.setScene(s);
+                    stage.show();
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Authorization error");
                     alert.show();
                 }
-                String g = "";
             } catch (IOException e) {
                 e.printStackTrace();
 

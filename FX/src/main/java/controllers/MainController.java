@@ -106,7 +106,7 @@ public class MainController implements Initializable {
         Stage c = (Stage) name.getScene().getWindow();
         c.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/xml/sample.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/sample.fxml"));
         Parent root1 = null;
         try {
             root1 = fxmlLoader.load();
